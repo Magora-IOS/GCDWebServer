@@ -139,32 +139,35 @@
     
     <script type="text/x-tmpl" id="template-listing">
       <tr class="row-file">
-        <td class="column-icon">
-          {% if (o.size != null) { %}
-            <button type="button" class="btn btn-default btn-xs button-download">
-              <span class="glyphicon glyphicon-download-alt"></span>
-            </button>
-          {% } else { %}
-            <button type="button" class="btn btn-default btn-xs button-open">
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </button>
-          {% } %}
-        </td>
-        <td class="column-name"><p class="edit">{%=o.name%}</p></td>
-        <td class="column-size">
-          {% if (o.size != null) { %}
-            <p>{%=formatFileSize(o.size)%}</p>
-          {% } %}
-        </td>
-        <td class="column-move">
-          <button type="button" class="btn btn-default btn-xs button-move">
+		<td class="column-move">
+          <button type="button" class="btn btn-link btn-xs button-move">
             <span class="glyphicon glyphicon glyphicon-share-alt"></span>
           </button>
         </td>
-        <td class="column-delete">
-          <button type="button" class="btn btn-danger btn-xs button-delete">
+		<td class="column-delete">
+          <button type="button" class="btn btn-link btn-xs button-delete">
             <span class="glyphicon glyphicon-trash"></span>
           </button>
+        </td>
+        <td class="column-icon">
+          {% if (o.size != null) { %}
+            <button type="button" class="btn btn-link btn-xs button-download">
+              <span class="glyphicon glyphicon-download-alt">
+			  {%=o.name%}
+			  </span>
+            </button>
+          {% } else { %}
+            <button type="button" class="btn btn-link btn-xs button-open">
+              <span class="glyphicon glyphicon-folder-open">
+			  {%=o.name%}
+			  </span>
+            </button>
+          {% } %}
+        </td>
+		<td class="column-size">
+          {% if (o.size != null) { %}
+            <p>{%=formatFileSize(o.size)%}</p>
+          {% } %}
         </td>
       </tr>
     </script>
